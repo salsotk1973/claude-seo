@@ -692,7 +692,8 @@ LLM brand-citation tracking via Profound (extension). **Prerequisites:** Profoun
 
 Free-tier AI-citation spot-check via Vantage (extension). **Prerequisites:** Vantage extension installed (`./extensions/vantage/install.sh`).
 ```
-/seo vantage check <domain> [platform]                       # Is the domain cited on chat_gpt/perplexity/gemini
+/seo vantage check <domain> <kw1,kw2,...>                    # Which keywords cite the domain in ChatGPT answers
+/seo vantage trend <domain> [platform] [months]              # Citation count by month (chat_gpt or google)
 /seo vantage leaders <keyword> [platform] [--compare <dom>]  # Who wins AI-answer citations for the keyword
 /seo vantage structure <keyword>                             # Shape of the winning AI answer
 /seo vantage structure-batch <kw1,kw2,...>                   # Same, across several keywords
@@ -756,6 +757,6 @@ Multi-page Lighthouse audit via Unlighthouse (extension, MIT, no API quota). **P
 | `/seo ahrefs [command] <url>` | Backlinks, organic keywords, and content data via the official Ahrefs MCP (extension) |
 | `/seo seranking [command]` | AI Share-of-Voice across ChatGPT, Gemini, Perplexity, AI Overviews, AI Mode (extension) |
 | `/seo profound [command]` | LLM citation tracking with time-series data (extension) |
-| `/seo vantage [command]` | Free-tier AI-citation spot-check across ChatGPT, Perplexity, Gemini (extension) |
+| `/seo vantage [command]` | Free-tier AI-citation check for ChatGPT and Google AI Overviews (extension) |
 | `/seo bing [command] <url>` | Bing Webmaster Tools + IndexNow URL submission (extension) |
 | `/seo unlighthouse <url>` | Multi-page Lighthouse runner, runs locally (extension) |

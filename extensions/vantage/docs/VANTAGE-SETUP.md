@@ -34,7 +34,7 @@ should show `Type: http` and `URL: https://vantagemcp.dev/mcp`. Then open a
 new Claude Code session and ask:
 
 ```
-/seo vantage check example.com
+/seo vantage trend example.com
 ```
 
 ## Rotate key
@@ -54,4 +54,4 @@ of `~/.claude.json` intact.
 |---|---|---|
 | Vantage tools missing in session | Session started before install | Open a new Claude Code session |
 | 401 from any `/seo vantage *` command | Key wrong or revoked | Get a key at https://vantagemcp.dev and re-run the installer |
-| Monthly limit message | Free tier (30 units/month: `check`/`leaders` 10 each, `structure` 1) used up | Wait for the reset or upgrade at https://vantagemcp.dev |
+| Monthly limit message | Free tier (30 units/month: `leaders` 10, `check`/`structure` 1 per keyword, `trend` 1) used up | Wait for the reset or upgrade at https://vantagemcp.dev |

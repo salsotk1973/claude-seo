@@ -186,7 +186,7 @@ claude-seo/
 | `/seo ahrefs [command] <url>` | Backlinks, organic keywords, and content data via the official Ahrefs MCP (extension) |
 | `/seo seranking [command]` | AI Share-of-Voice across ChatGPT, Gemini, Perplexity, AI Overviews, AI Mode (extension) |
 | `/seo profound [command]` | LLM citation tracking with time-series data (extension) |
-| `/seo vantage [command]` | Free-tier AI-citation spot-check across ChatGPT, Perplexity, Gemini (extension) |
+| `/seo vantage [command]` | Free-tier AI-citation check for ChatGPT and Google AI Overviews (extension) |
 | `/seo bing [command] <url>` | Bing Webmaster Tools + IndexNow URL submission (extension) |
 | `/seo unlighthouse <url>` | Multi-page Lighthouse runner, runs locally (extension) |
 

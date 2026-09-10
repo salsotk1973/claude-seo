@@ -177,7 +177,7 @@ claude
 | `/seo ahrefs [command] <url>` | Backlinks, organic keywords, and content data via the official Ahrefs MCP (extension) |
 | `/seo seranking [command]` | AI Share-of-Voice across ChatGPT, Gemini, Perplexity, AI Overviews, AI Mode (extension) |
 | `/seo profound [command]` | LLM citation tracking with time-series data (extension) |
-| `/seo vantage [command]` | Free-tier AI-citation spot-check across ChatGPT, Perplexity, Gemini (extension) |
+| `/seo vantage [command]` | Free-tier AI-citation check for ChatGPT and Google AI Overviews (extension) |
 | `/seo bing [command] <url>` | Bing Webmaster Tools + IndexNow URL submission (extension) |
 | `/seo unlighthouse <url>` | Multi-page Lighthouse runner, runs locally (extension) |
 
@@ -418,7 +418,7 @@ Five extensions added in Phase E, plus Vantage:
 - **Ahrefs:** official `@ahrefs/mcp` server with backlink and organic data
 - **SE Ranking:** AI Share-of-Voice across ChatGPT, Gemini, Perplexity, AI Overviews, AI Mode
 - **Profound:** LLM citation tracker with time-series data
-- **Vantage:** free-tier (3 checks/month, no card) spot-check of whether a domain is cited by ChatGPT, Perplexity, or Gemini for a given topic, and how the winning answer is structured. A lighter first step before Profound or SE Ranking's paid continuous tracking.
+- **Vantage:** free-tier (30 quota units/month, no card) check of which of your keywords cite a domain in ChatGPT answers, its citation count over time in ChatGPT or Google AI Overviews, and how the winning answer is structured. A lighter first step before Profound or SE Ranking's paid continuous tracking.
 - **Bing Webmaster:** Bing Webmaster Tools plus IndexNow unified
 - **Unlighthouse:** MIT-licensed multi-page Lighthouse runner
 

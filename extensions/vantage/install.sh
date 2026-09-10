@@ -3,8 +3,8 @@
 #
 # Registers the hosted Vantage MCP server (https://vantagemcp.dev/mcp,
 # Streamable HTTP) in ~/.claude.json and copies the seo-vantage skill into
-# ~/.claude/skills/. Vantage checks whether a domain is cited by ChatGPT,
-# Perplexity, or Gemini for a given topic. Free tier: 3 checks/month, no card.
+# ~/.claude/skills/. Vantage checks whether a domain is cited in ChatGPT or
+# Google AI Overview answers. Free tier: 30 quota units/month, no card.
 set -euo pipefail
 
 main() {
@@ -27,7 +27,7 @@ main() {
 
     SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" >/dev/null 2>&1 && pwd)"
 
-    echo "Get a free API key (3 checks/month, no card) at https://vantagemcp.dev"
+    echo "Get a free API key (no card) at https://vantagemcp.dev"
     read -rsp "Vantage API key: " VANTAGE_KEY
     echo
     [ -z "${VANTAGE_KEY}" ] && { echo "✗ No key provided."; exit 1; }
@@ -74,7 +74,7 @@ PY
 
     echo
     echo "Done. Open a new Claude Code session and run:"
-    echo "  /seo vantage check example.com"
+    echo "  /seo vantage trend example.com"
     echo
     echo "Full docs: extensions/vantage/docs/VANTAGE-SETUP.md"
 }

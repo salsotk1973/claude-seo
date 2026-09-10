@@ -8,7 +8,7 @@ $SkillDir = Join-Path $HOME ".claude/skills"
 # there, so entries written to settings.json silently never load.
 $McpConfigJson = Join-Path $HOME ".claude.json"
 if (-not (Test-Path (Join-Path $SkillDir "seo"))) { throw "claude-seo base plugin not installed." }
-Write-Host "Get a free API key (3 checks/month, no card) at https://vantagemcp.dev"
+Write-Host "Get a free API key (no card) at https://vantagemcp.dev"
 $Key = Read-Host "Vantage API key" -AsSecureString
 $Plain = [System.Net.NetworkCredential]::new("", $Key).Password
 if (-not $Plain) { throw "No key provided." }
@@ -41,4 +41,4 @@ print(f'Wrote mcpServers.vantage to {path}')
 $py | python - $McpConfigJson $Plain
 if ($LASTEXITCODE -ne 0) { throw "Could not register the Vantage MCP server." }
 Write-Host ""
-Write-Host "Done. Open a new Claude Code session and run /seo vantage check example.com"
+Write-Host "Done. Open a new Claude Code session and run /seo vantage trend example.com"
