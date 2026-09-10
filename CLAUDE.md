@@ -148,6 +148,7 @@ claude-seo/
     bing-webmaster/              # Bing Webmaster and IndexNow install scripts
     profound/                    # Profound MCP install scripts
     seranking/                   # SE Ranking MCP install scripts
+    vantage/                     # Vantage MCP install scripts
     unlighthouse/                # Unlighthouse install scripts
   docs/                            # Extended documentation
 ```
@@ -185,6 +186,7 @@ claude-seo/
 | `/seo ahrefs [command] <url>` | Backlinks, organic keywords, and content data via the official Ahrefs MCP (extension) |
 | `/seo seranking [command]` | AI Share-of-Voice across ChatGPT, Gemini, Perplexity, AI Overviews, AI Mode (extension) |
 | `/seo profound [command]` | LLM citation tracking with time-series data (extension) |
+| `/seo vantage [command]` | Free-tier AI-citation spot-check across ChatGPT, Perplexity, Gemini (extension) |
 | `/seo bing [command] <url>` | Bing Webmaster Tools + IndexNow URL submission (extension) |
 | `/seo unlighthouse <url>` | Multi-page Lighthouse runner, runs locally (extension) |
 
@@ -234,7 +236,7 @@ Part of the Claude Code skill family:
 1. **Progressive Disclosure**: Metadata always loaded, instructions on activation, resources on demand
 2. **Industry Detection**: Auto-detect SaaS, e-commerce, local, publisher, agency
 3. **Parallel Execution**: Full audits spawn up to 15 subagents simultaneously
-4. **Extension System**: DataForSEO, Firecrawl, Banana, Ahrefs, SE Ranking, Profound, Bing Webmaster, and Unlighthouse extensions
+4. **Extension System**: DataForSEO, Firecrawl, Banana, Ahrefs, SE Ranking, Profound, Vantage, Bing Webmaster, and Unlighthouse extensions
 
 ## Repository Topology (public + private)
 

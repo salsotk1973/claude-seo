@@ -26,6 +26,7 @@ INSTALLERS = {
     "extensions/dataforseo/install.sh": 4,  # settings, username, password, field_config
     "extensions/firecrawl/install.sh": 2,   # settings, api_key
     "extensions/banana/install.sh": 2,      # settings, api_key
+    "extensions/vantage/install.sh": 2,     # mcp config, api_key
 }
 
 _HEREDOC_RE = re.compile(r"<<'PY'\n(.*?)\nPY\n", re.DOTALL)

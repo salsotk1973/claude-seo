@@ -104,6 +104,7 @@ def test_audit_page_counts_pattern_hits() -> None:
         ("ahrefs", "seo-ahrefs"),
         ("seranking", "seo-seranking"),
         ("profound", "seo-profound"),
+        ("vantage", "seo-vantage"),
         ("bing-webmaster", "seo-bing"),
         ("unlighthouse", "seo-unlighthouse"),
     ],
@@ -131,7 +132,7 @@ _POSIX_ONLY = pytest.mark.skipif(
 
 @_POSIX_ONLY
 @pytest.mark.parametrize(
-    "name", ["ahrefs", "seranking", "profound", "bing-webmaster", "unlighthouse"],
+    "name", ["ahrefs", "seranking", "profound", "vantage", "bing-webmaster", "unlighthouse"],
 )
 def test_extension_install_script_is_executable(name: str) -> None:
     install = _REPO_ROOT / "extensions" / name / "install.sh"
@@ -164,6 +165,7 @@ def test_every_extension_install_and_uninstall_is_executable() -> None:
         ("ahrefs", "seo-ahrefs"),
         ("seranking", "seo-seranking"),
         ("profound", "seo-profound"),
+        ("vantage", "seo-vantage"),
         ("bing-webmaster", "seo-bing"),
         ("unlighthouse", "seo-unlighthouse"),
     ],
