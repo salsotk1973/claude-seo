@@ -2,8 +2,11 @@
 """Cross-platform runtime for Claude SEO's bundled Python scripts.
 
 This module deliberately uses only the Python standard library. It is launched
-by ``bin/claude-seo`` under a base Python, then dispatches work through the
-managed virtual environment created by ``setup``.
+by the sibling ``scripts/claude-seo`` launcher under a base Python, then
+dispatches work through the managed virtual environment created by ``setup``.
+Skills, agents, and hooks invoke that launcher as
+``"${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo"``; the repository keeps no
+top-level ``bin/`` directory because hosted marketplaces reject one.
 """
 
 from __future__ import annotations
@@ -277,7 +280,11 @@ def command_setup(args: argparse.Namespace) -> int:
                 except RuntimeError as exc:
                     print(f"Browser setup incomplete: {exc}", file=sys.stderr)
             _run_checked(
-                [str(staged_python), "-c", "import bs4, lxml, playwright, requests, trafilatura"],
+                [
+                    str(staged_python),
+                    "-c",
+                    "import bs4, lxml, lxml_html_clean, playwright, requests, trafilatura",
+                ],
                 env=env,
                 stage="runtime import validation",
             )
