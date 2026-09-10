@@ -308,6 +308,13 @@ extensions/
 │   ├── skills/seo-profound/SKILL.md
 │   └── docs/PROFOUND-SETUP.md
 │
+├── vantage/                  # Vantage free-tier AI-citation checks (hosted MCP)
+│   ├── install.sh
+│   ├── install.ps1
+│   ├── uninstall.sh
+│   ├── skills/seo-vantage/SKILL.md
+│   └── docs/VANTAGE-SETUP.md
+│
 ├── bing-webmaster/           # Bing Webmaster Tools + IndexNow
 │   ├── install.sh
 │   ├── install.ps1
@@ -333,6 +340,7 @@ extensions/
 | **Ahrefs** | `@ahrefs/mcp@0.0.11` | Backlinks and organic keyword data via the official `@ahrefs/mcp` server |
 | **SE Ranking** | SE Ranking API | AI Share-of-Voice across ChatGPT, Gemini, Perplexity, AI Overviews, and AI Mode |
 | **Profound** | Profound API | LLM citation tracking with time-series data |
+| **Vantage** | Hosted MCP (`https://vantagemcp.dev/mcp`) | Free-tier AI-citation checks for ChatGPT and Google AI Overviews |
 | **Bing Webmaster** | Bing Webmaster Tools API | Bing Webmaster Tools + IndexNow URL submission |
 | **Unlighthouse** | `unlighthouse@0.13.5` | Multi-page Lighthouse runner, runs locally |
 

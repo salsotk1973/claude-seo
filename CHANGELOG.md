@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Vantage extension (`extensions/vantage/`): free-tier AI-citation checks for
+  ChatGPT and Google AI Overviews via the hosted Vantage MCP server
+  (`https://vantagemcp.dev/mcp`). `/seo vantage check|trend|leaders|structure|structure-batch`
+  route to `check_prompt_coverage`, `analyze_citation_trend`,
+  `find_citation_leaders`, and `analyze_citation_structure(_batch)`. The
+  installer registers `mcpServers.vantage` in `~/.claude.json` and refuses to
+  modify a malformed config. (#245)
+
 ## [2.3.0] - 2026-09-10
 
 ### Security

@@ -23,6 +23,7 @@ Optional extensions make API calls to third-party services when you invoke their
 | **Ahrefs** | Official `@ahrefs/mcp` server (Ahrefs API) | Domains and URLs you analyze | [Ahrefs Privacy](https://ahrefs.com/privacy) |
 | **SE Ranking** | seranking.com/api | Domains and keywords you analyze | [SE Ranking Privacy](https://seranking.com/privacy-policy) |
 | **Profound** | Profound API (tryprofound.com) | Brands and domains you track | [Profound Privacy](https://tryprofound.com/privacy) |
+| **Vantage** | Hosted Vantage MCP server (vantagemcp.dev), which queries DataForSEO | Domains and keywords you check | [Vantage](https://vantagemcp.dev) |
 | **Bing Webmaster / IndexNow** | Bing Webmaster Tools API and IndexNow endpoints | Domains, submitted URLs, and key-verification URL data | [Microsoft Privacy](https://privacy.microsoft.com/) |
 | **Unlighthouse** | Local only — no third-party vendor | Runs Lighthouse locally against the target URL; only the target site is contacted (to crawl it). Nothing is sent to a third-party vendor. | N/A (runs locally) |
 
