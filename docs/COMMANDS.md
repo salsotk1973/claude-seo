@@ -692,7 +692,7 @@ LLM brand-citation tracking via Profound (extension). **Prerequisites:** Profoun
 
 Free-tier AI-citation spot-check via Vantage (extension). **Prerequisites:** Vantage extension installed (`./extensions/vantage/install.sh`).
 ```
-/seo vantage check <domain> <kw1,kw2,...>                    # Which keywords cite the domain in ChatGPT answers
+/seo vantage check <domain> <kw1,kw2,...> [--brand <name>]   # Which keywords cite (or only name) the domain in ChatGPT
 /seo vantage trend <domain> [platform] [months]              # Citation count by month (chat_gpt or google)
 /seo vantage leaders <keyword> [platform] [--compare <dom>]  # Who wins AI-answer citations for the keyword
 /seo vantage structure <keyword>                             # Shape of the winning AI answer

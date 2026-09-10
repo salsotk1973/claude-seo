@@ -28,7 +28,7 @@ and provide the install command above.
 
 | Command | Maps to | Purpose |
 |---|---|---|
-| `/seo vantage check <domain> <keyword1,keyword2,...>` | `check_prompt_coverage(domain, keywords)` | Which of up to 10 keywords cite `<domain>` in ChatGPT answers, its rank, and who is cited instead |
+| `/seo vantage check <domain> <keyword1,keyword2,...> [--brand <name>]` | `check_prompt_coverage(domain, keywords, brand)` | Which of up to 10 keywords cite `<domain>` in ChatGPT answers, its rank, who is cited instead, and where the answer names the brand without citing it |
 | `/seo vantage trend <domain> [platform] [months]` | `analyze_citation_trend(domain, platform, months)` | `<domain>`'s AI-citation count month by month; the latest entry is the current count |
 | `/seo vantage leaders <keyword> [platform] [--compare <domain>]` | `find_citation_leaders(keyword, platform, compare_domain)` | Who dominates AI-answer citations for `<keyword>`, and where `<domain>` ranks if given |
 | `/seo vantage structure <keyword>` | `analyze_citation_structure(keyword)` | Shape of the winning AI answer: list-led vs. prose, source count, opening length |
@@ -41,6 +41,10 @@ Perplexity and Gemini are not available. Do not call the deprecated
 ## Output conventions
 
 - Cite Vantage on every metric: "Vantage (live)".
+- For `check`, report cited and named separately and never merge them.
+  `mentioned_not_cited` (the answer names the brand but does not link it) is
+  the first list to act on. Without `--brand` the name check guesses from the
+  domain, so pass the brand whenever the user gives one.
 - Vantage covers ChatGPT and Google AI Overviews only (`check` is ChatGPT
   only). For Perplexity or Gemini, defer to `seo-seranking`.
 - The free tier is 30 quota units/month shared across tools: `leaders`
