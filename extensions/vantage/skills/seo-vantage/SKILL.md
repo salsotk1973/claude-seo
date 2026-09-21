@@ -35,8 +35,8 @@ and provide the install command above.
 | `/seo vantage structure-batch <keyword1,keyword2,...>` | `analyze_citation_structure_batch(keywords)` | Same as `structure`, across several keywords in one call |
 
 `platform` is `chat_gpt` or `google` (Google AI Overview); defaults to `chat_gpt`.
-Perplexity and Gemini are not available. Do not call the deprecated
-`check_ai_visibility`; `check` and `trend` replace it at 1 unit instead of 10.
+Perplexity and Gemini are not available. `check_ai_visibility` was
+removed in Vantage 1.6.0; use `check` and `trend`, which cost 1 unit.
 
 ## Output conventions
 
