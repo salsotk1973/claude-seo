@@ -20,13 +20,13 @@ Copy-Item (Join-Path $SourceDir "skills/seo-vantage/SKILL.md") `
 Write-Host "✓ Installed skill: $SkillTarget"
 $py = @"
 import json, os, sys, tempfile
-path, key = sys.argv[1], sys.argv[2]
+path, key = sys.argv[1], os.environ['CLAUDE_SEO_SECRET']
 data = {}
 if os.path.exists(path):
     try:
         data = json.load(open(path))
     except json.JSONDecodeError:
-        sys.exit(f'{path} is not valid JSON; not modifying it.')
+        sys.exit(f'{path} is not valid JSON. Nothing was changed; fix it and rerun.')
 data.setdefault('mcpServers', {})['vantage'] = {
     'type': 'http',
     'url': 'https://vantagemcp.dev/mcp',
@@ -38,7 +38,11 @@ with os.fdopen(fd, 'w') as fh:
 os.replace(tmp, path)
 print(f'Wrote mcpServers.vantage to {path}')
 "@
-$py | python - $McpConfigJson $Plain
-if ($LASTEXITCODE -ne 0) { throw "Could not register the Vantage MCP server." }
+# The key travels in the environment, never argv, and is cleared afterwards.
+$env:CLAUDE_SEO_SECRET = $Plain
+try {
+    $py | python - $McpConfigJson
+    if ($LASTEXITCODE -ne 0) { throw "Could not register the Vantage MCP server. Nothing was saved." }
+} finally { Remove-Item Env:CLAUDE_SEO_SECRET -ErrorAction SilentlyContinue }
 Write-Host ""
 Write-Host "Done. Open a new Claude Code session and run /seo vantage trend example.com"

@@ -54,4 +54,4 @@ of `~/.claude.json` intact.
 |---|---|---|
 | Vantage tools missing in session | Session started before install | Open a new Claude Code session |
 | 401 from any `/seo vantage *` command | Key wrong or revoked | Get a key at https://vantagemcp.dev and re-run the installer |
-| Monthly limit message | Free tier (30 units/month: `leaders` 10, `check`/`structure` 1 per keyword, `trend` 1) used up | Wait for the reset or upgrade at https://vantagemcp.dev |
+| Monthly limit message | Free tier (30 units/month: `leaders` and `questions` 10, `check`/`structure` 1 per keyword per sample, `gap` and `trend` 1, `history` 0) used up | Wait for the reset or upgrade at https://vantagemcp.dev |

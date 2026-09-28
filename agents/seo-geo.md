@@ -1,7 +1,7 @@
 ---
 name: seo-geo
 description: GEO and AI search specialist. Analyzes AI crawler accessibility, llms.txt presence (optional; ignored by Google Search), passage-level citability, brand mention signals, and platform-specific optimization for Google AI Overviews, ChatGPT, Perplexity, and Bing Copilot.
-model: sonnet
+model: opus
 maxTurns: 35
 tools: Read, Bash, WebFetch, Glob, Grep, Write
 ---
@@ -38,12 +38,11 @@ governs Apple Intelligence training only, never Siri/Spotlight/Safari discoverab
 (that follows Applebot). Check and report each bot against the specific capability
 it governs.
 Optional block (training only): CCBot, ClaudeBot, Google-Extended, Applebot-Extended,
-anthropic-ai (unverified: not documented on Anthropic's current crawler support
-article), cohere-ai
+cohere-ai
 
 ## Key Citability Signals
 
-- Optimal passage length: **134-167 words** for AI citation
+- Self-contained answer blocks (about 130-170 words is a third-party heuristic; Google says content need not be chunked for AI)
 - Direct answers in first 40-60 words of each section
 - Question-based H2/H3 headings
 - Specific statistics with source attribution

@@ -36,15 +36,15 @@ main() {
     cp "${SOURCE_DIR}/skills/seo-vantage/SKILL.md" "${SKILL_DIR}/seo-vantage/SKILL.md"
     echo "✓ Installed skill: ${SKILL_DIR}/seo-vantage/SKILL.md"
 
-    # Merge the MCP entry into ~/.claude.json atomically. The key is passed as
-    # argv, never interpolated into the Python source.
-    python3 - "${MCP_CONFIG_JSON}" "${VANTAGE_KEY}" <<'PY'
+    # Merge the MCP entry into ~/.claude.json atomically. The key travels in the
+    # environment (never argv, never interpolated into the Python source).
+    CLAUDE_SEO_SECRET="${VANTAGE_KEY}" python3 - "${MCP_CONFIG_JSON}" <<'PY'
 import json
 import os
 import sys
 import tempfile
 
-path, key = sys.argv[1], sys.argv[2]
+path, key = sys.argv[1], os.environ["CLAUDE_SEO_SECRET"]
 data = {}
 if os.path.exists(path):
     try:
@@ -52,7 +52,7 @@ if os.path.exists(path):
             data = json.load(fh)
     except json.JSONDecodeError:
         # ~/.claude.json holds all of Claude Code's user config; never reset it.
-        sys.exit(f"✗ {path} is not valid JSON; not modifying it.")
+        sys.exit(f"✗ {path} is not valid JSON. Nothing was changed; fix it and rerun.")
 data.setdefault("mcpServers", {})["vantage"] = {
     "type": "http",
     "url": "https://vantagemcp.dev/mcp",
